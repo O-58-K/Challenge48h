@@ -26,8 +26,7 @@
 
 <?php
     
-    $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
+    $pdo = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_b9007de211fbd63", "b71e8fc4c36d15", "b2cc99c9", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
     $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC '); 
 
     if(isset($_GET['q']) AND !empty($_GET['q'])){
@@ -44,8 +43,7 @@
           <div class="w-100">
 
             <?php
-              $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
+$pdo = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_b9007de211fbd63", "b71e8fc4c36d15", "b2cc99c9", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
               //******************************************* */
               $result = $pdo->query("SELECT * FROM ambiance WHERE id = $_GET[id]");
               $ambiance = $result->fetch(PDO::FETCH_OBJ);
