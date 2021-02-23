@@ -40,42 +40,9 @@
     </div>
 </nav>
 
-<?php
-error_reporting(0); 
-?> 
-<?php
-  $msg = ""; 
-  
-  if (isset($_POST['upload'])) { 
-  
-    $filename = $_FILES["uploadfile"]["name"]; 
-    $tempname = $_FILES["uploadfile"]["tmp_name"];     
-        $folder = "ambiance/".$filename; 
-            
-        mysqli_query($db, $sql); 
-          
-        if (move_uploaded_file($tempname, $folder))  { 
-            $msg = "Image téléchargé avec succès"; 
-        }else{ 
-            $msg = "Veuillez réessayer"; 
-      } 
-  } 
-  $result = mysqli_query($db, "SELECT * FROM ambiance"); 
-?> 
-
 <center>
 
     <br><br>
-
-    <form method="POST" action="" enctype="multipart/form-data"> 
-        <h3>Vous pouvez ajouter des images dans votre dossier d'images</h3>
-        <br>
-        <input class="btn btn-outline-light" required id="url" type="file" name="uploadfile" value="" /> 
-        <div>
-            <br>
-            <button class="btn btn-outline-light" type="submit"name="upload"> Télécharger </button>  
-        </div> 
-    </form>
 
     <body style="background: rebeccapurple; color: white;">
 
