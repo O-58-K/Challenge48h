@@ -22,6 +22,9 @@
                         <li class="nav-item">
                             <a style="color: white; margin-right: 0px;" class="nav-link" href="modifier.php">Modification</a>
                         </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="suppr.php">Suppression</a>
+                        </li>
                     </ul>
                 </div>
 

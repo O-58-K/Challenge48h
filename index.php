@@ -14,6 +14,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                        <a style="color: white; margin-right: 0px;" class="nav-link" href="admin.php">Administration</a>
+                        </li>
+                    </ul>
+                </div>
+
             <form class="form-inline my-2 my-lg-0" method="GET" action="recherche.php" enctype='multipart/form-data'>
                 <div class="input-group input-group-sm">
                     <input id="q" name="q" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Rechercher">
