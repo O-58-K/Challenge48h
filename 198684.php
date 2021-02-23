@@ -86,6 +86,8 @@
                             <h2 style="background: mediumpurple;" class="card-title"><?php echo $ambiance->Titre; ?></h2>
                             <center>
                                 <br>
+                                <h3>ID : <?php echo $ambiance->id; ?></h3>
+                                <br>
                             </center>
                             <div class="cart-button">                         
                             <div class="clear"></div>
