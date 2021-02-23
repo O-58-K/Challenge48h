@@ -13,6 +13,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="creer.php">Ajout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="modifier.php">Modification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="suppr.php">Suppression</a>
+                        </li>
+                    </ul>
+                </div>
+
             <form class="form-inline my-2 my-lg-0" method="GET" action="recherche.php" enctype='multipart/form-data'>
                 <div class="input-group input-group-sm">
                     <input id="q" name="q" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Rechercher">
@@ -37,11 +51,7 @@ error_reporting(0);
     $filename = $_FILES["uploadfile"]["name"]; 
     $tempname = $_FILES["uploadfile"]["tmp_name"];     
         $folder = "ambiance/".$filename; 
-          
-    $db = mysqli_connect("localhost", "root", "", "photos"); 
-  
-        $sql = "INSERT INTO ambiance (url) VALUES ('$filename')"; 
-  
+            
         mysqli_query($db, $sql); 
           
         if (move_uploaded_file($tempname, $folder))  { 

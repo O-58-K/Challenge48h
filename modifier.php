@@ -13,6 +13,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="creer.php">Ajout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="modifier.php">Modification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="suppr.php">Suppression</a>
+                        </li>
+                    </ul>
+                </div>
+
             <form class="form-inline my-2 my-lg-0" method="GET" action="recherche.php" enctype='multipart/form-data'>
                 <div class="input-group input-group-sm">
                     <input id="q" name="q" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Rechercher">
@@ -36,7 +50,7 @@
 
     <?php 
 
-$pdo = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_b9007de211fbd63", "b71e8fc4c36d15", "b2cc99c9", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));        //**********************************************************************************/
+        $pdo = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_b9007de211fbd63", "b71e8fc4c36d15", "b2cc99c9", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));        //**********************************************************************************/
 
         $result = $pdo->query("SELECT * FROM ambiance WHERE id ");
         while ($ambiance = $result->fetch(PDO::FETCH_OBJ)) {}
