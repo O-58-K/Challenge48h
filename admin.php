@@ -40,9 +40,7 @@
 
 <?php
     
-    $pdo = new PDO("mysql:host=ec2-54-74-156-137.eu-west-1.compute.amazonaws.com
-    ;dbname=d3r553cke7v3bn", "qplmhevngtcgbp", "e341d82e5c8f4d8eddb70d4bde574a646d13ff8051fe9fe5b8148b98e250ecd4
-    ", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+    $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
     $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC '); 
 
