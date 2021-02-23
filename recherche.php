@@ -30,7 +30,7 @@
     
     $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
-    $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC '); 
+    $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC ');
 
     if(isset($_GET['q']) AND !empty($_GET['q'])){
         $q = htmlspecialchars($_GET['q']);
@@ -46,7 +46,7 @@
     
     $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
-    $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC '); 
+    $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC ');
 
     if(isset($_GET['q']) AND !empty($_GET['q'])){
         $q = htmlspecialchars($_GET['q']);

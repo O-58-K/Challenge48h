@@ -36,7 +36,7 @@ error_reporting(0);
   
     $filename = $_FILES["uploadfile"]["name"]; 
     $tempname = $_FILES["uploadfile"]["tmp_name"];     
-        $folder = "image/".$filename; 
+        $folder = "ambiance/".$filename; 
           
     $db = mysqli_connect("localhost", "root", "", "photos"); 
   
@@ -76,7 +76,8 @@ error_reporting(0);
         if (!empty($_POST)) {
 
             $_POST["url"] = htmlentities($_POST["url"], ENT_QUOTES);
-            $requeteSQL = "INSERT INTO ambiance (url, Titre) VALUES ('ambiance/$_POST[url]', '$_POST[Titre]')"; 
+            $_POST["tag"] = htmlentities($_POST["tag"], ENT_QUOTES);
+            $requeteSQL = "INSERT INTO ambiance (url, Titre, tag) VALUES ('ambiance/$_POST[url]', '$_POST[Titre]', '$_POST[tag]')"; 
             $result = $pdo->exec($requeteSQL); 
         }
 
@@ -93,6 +94,8 @@ error_reporting(0);
                 <input style="width:20%;" type="text" class="form-control" placeholder="Nom de l'image" id="Titre" name="Titre" >
                 <br>
                 <input style="width:20%;" required type="text" class="form-control" placeholder="Nom du fichier de l'image" id="url" name="url">
+                <br>
+                <input style="width:20%;" required type="text" class="form-control" placeholder="Tag" id="tag" name="tag">
             </div>
 
             <button type="submit" class="btn btn-outline-light" id="OK">Enregistrer</button>

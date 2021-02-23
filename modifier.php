@@ -37,13 +37,21 @@
     <?php 
 
         $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        //**********************************************************************************/
+
+        $result = $pdo->query("SELECT * FROM ambiance WHERE id ");
+        while ($ambiance = $result->fetch(PDO::FETCH_OBJ)) {}
+        //**********************************************************************************/
+
+        $Requete = $pdo->prepare('UPDATE ambiance SET Titre=:Titre,  url="ambiance/":url WHERE id=:id');
 
         if (!empty($_POST)) {
 
-            $_POST["url"] = htmlentities($_POST["url"], ENT_QUOTES);
-            $requeteSQL = "INSERT INTO ambiance (url, Titre) VALUES ('ambiance/$_POST[url]', '$_POST[Titre]')"; 
-            $result = $pdo->exec($requeteSQL); 
-        }
+            $Requete->bindValue(':id',$_POST['id'],PDO::PARAM_INT);
+            $Requete->bindValue(':Titre',$_POST['Titre'],PDO::PARAM_STR);
+            $Requete->bindValue(':url',$_POST['url'],PDO::PARAM_STR);
+            $Requete->execute();
+}
 
     ?>
 
@@ -54,6 +62,8 @@
 
             <div class="form-group">
                 <h3>Image</h3>
+                <br>
+                <input style="width:20%;" type="text" class="form-control" placeholder="id" id="id" name="id" >
                 <br>
                 <input style="width:20%;" type="text" class="form-control" placeholder="Nom de l'image" id="Titre" name="Titre" >
                 <br>
