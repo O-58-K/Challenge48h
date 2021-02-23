@@ -14,6 +14,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="creer.php">Ajout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white; margin-right: 0px;" class="nav-link" href="modifier.php">Modification</a>
+                        </li>
+                    </ul>
+                </div>
+
             <form class="form-inline my-2 my-lg-0" method="GET" action="recherche.php" enctype='multipart/form-data'>
                 <div class="input-group input-group-sm">
                     <input id="q" name="q" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Rechercher">
@@ -29,7 +40,9 @@
 
 <?php
     
-    $pdo = new PDO("mysql:host=localhost;dbname=challenge48h", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+    $pdo = new PDO("mysql:host=ec2-54-74-156-137.eu-west-1.compute.amazonaws.com
+    ;dbname=d3r553cke7v3bn", "qplmhevngtcgbp", "e341d82e5c8f4d8eddb70d4bde574a646d13ff8051fe9fe5b8148b98e250ecd4
+    ", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
     $articles = $pdo->query('SELECT * FROM ambiance ORDER BY id DESC '); 
 
@@ -71,8 +84,6 @@
                             <h2 style="background: mediumpurple;" class="card-title"><?php echo $ambiance->Titre; ?></h2>
                             <center>
                                 <br>
-                                <button onclick="download()" style="width: 20%;" class="btn btn-outline-light">Télécharger</button>
-                                <br><br>
                             </center>
                             <div class="cart-button">                         
                             <div class="clear"></div>
@@ -92,7 +103,7 @@
    <script>  
       function download(){ 
           axios({ 
-              url:'ambiance/_AJG3926_ok.jpg', 
+              url:'https://source.unsplash.com/random/500x500', 
               method:'GET', 
               responseType: 'blob' 
       }) 
